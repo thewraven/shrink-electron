@@ -1,7 +1,7 @@
 const electron = require('electron')
 const { dialog, ipcMain, app, BrowserWindow } = require('electron')
 const { spawn } = require("child_process")
-
+const finished_msg = "Everything done!"
 const path = require('path')
 const url = require('url')
 
@@ -33,7 +33,7 @@ ipcMain.on('startCompression', function(event, parameters) {
         event.sender.send("output", output_info)
     });
     shrink.on("close", (output_info) => {
-        event.sender.send("output", "Everything done!")
+        event.sender.send("output", finished_msg)
     });
 });
 

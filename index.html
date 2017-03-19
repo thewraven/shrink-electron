@@ -16,19 +16,19 @@
 
 <body>
     <div class="container-fluid">
-        <div class="col-md-6 form-group well bs-component">
+        <div class="col-md-6 form-group well bs-component" id="config-container">
             <legend>Shrink</legend>
             <div class="form-group is-empty is-fileinput">
                 <label class="control-label" for="btn-selectSourceFolder">Select the source folder</label>
                 <input type="file" class="btn btn-raised" id="btn-selectSourceFolder" value="Select"></input>
             </div>
 
-            <input class="form-control" id="lbl-sourceFolder"></input>
+            <input disabled class="form-control" id="lbl-sourceFolder"></input>
             <div class="form-group is-empty is-fileinput">
                 <label class="control-label" for="btn-selectDestFolder">Select the destiny folder</label>
                 <input type="file" class="btn btn-raised" id="btn-selectDestFolder" value="Select"></input>
             </div>
-            <input class="form-control" id="lbl-destFolder"></input>
+            <input disabled class="form-control" id="lbl-destFolder"></input>
             <label class="control-label" for="quality">Quality:</label>
             <input type="number" class="form-control" id="quality" value=60></input>
             <label class="control-label" for="workers">Workers:</label>
@@ -36,8 +36,10 @@
 
             <input type="button" id="btn-ok" class="btn btn-raised btn-success" value="Start compression"></input>
         </div>
-        <div class="col-md-12 form-group is-empty">
-            <textarea class="form-control" id="txt-result"></textarea>
+        <div class="col-md-12 form-group" id="result-info">
+            <legend>Shrinking...</legend>
+            <textarea readonly class="form-control" id="txt-result" rows=20 cols=100></textarea>
+            <input type="button" id="btn-reboot" class="btn btn-raised btn-success" value="Start over"></input>
         </div>
     </div>
 </body>
