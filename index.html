@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
 
-  <script>
-    // You can also require other files to run in this process
+<head>
+    <meta charset="UTF-8">
+    <title>Shrink</title>
+</head>
+
+<body>
+    <h3>Shrink</h3>
+    <input type="button" id="btn-selectSourceFolder" value="Select source folder"></input>
+
+    <input type="text" id="lbl-sourceFolder"></input>
+    <br>
+    <input type="button" id="btn-selectDestFolder" value="Select destiny folder"></input>
+    <input type="text" id="lbl-destFolder"></input>
+    <br> Quality: <input type="number" id="quality" value=60></input>
+    <br> Workers: <input type="number" id="workers" value=50></input>
+    <br>
+    <input type="button" id="btn-ok" value="Start compression"></input>
+    <br>
+    <textarea id="txt-result"></textarea>
+</body>
+
+<script>
     require('./renderer.js')
-  </script>
+</script>
+
 </html>
