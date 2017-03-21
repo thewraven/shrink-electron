@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="dist/css/ripples.min.css">
-    <script src="dist/js/jquery.js"></script>
+    <script>
+        window.jQuery = window.$ = require("jquery")
+    </script>
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="dist/js/ripples.js"></script>
     <script src="dist/js/material.min.js"></script>
@@ -38,7 +40,7 @@
         </div>
         <div class="col-md-12 form-group" id="result-info">
             <legend>Shrinking...</legend>
-            <textarea readonly class="form-control" id="txt-result" rows=20 cols=100></textarea>
+            <textarea readonly class="form-control" id="txt-result" rows=15 cols=100></textarea>
             <input type="button" id="btn-reboot" class="btn btn-raised btn-success" value="Start over"></input>
         </div>
     </div>

@@ -1,7 +1,7 @@
 const {
     ipcRenderer
 } = require('electron');
-const finished_msg = "Everything done!"
+const finished_msg = "All done!"
 let inputFolder = "";
 let outputFolder = "";
 

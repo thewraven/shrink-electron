@@ -1,7 +1,7 @@
 const electron = require('electron')
 const { dialog, ipcMain, app, BrowserWindow } = require('electron')
 const { spawn } = require("child_process")
-const finished_msg = "Everything done!"
+const finished_msg = "All done!"
 const path = require('path')
 const url = require('url')
 
@@ -48,7 +48,7 @@ function createWindow() {
     }))
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
