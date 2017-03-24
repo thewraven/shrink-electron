@@ -4,7 +4,7 @@ const { spawn } = require("child_process")
 const finished_msg = "All done!"
 const path = require('path')
 const url = require('url')
-
+const os = require('os').platform();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -25,7 +25,17 @@ ipcMain.on('startCompression', function(event, parameters) {
     let { input, output, quality, workers } = parameters;
     console.log("in", input, "out", output, "workers",
         workers, "quality", quality);
-    let shrink = spawn("./assets/shrink_linux", ["-dir", input, "-output", output, "-quality", quality, "-workers", workers, "-hierarchy"]);
+    let execPath = "";
+    switch (os) {
+      case "linux":
+        execPath = "./assets/shrink_linux";
+        break;
+      case "win32":
+        execPath = "assets\\shrink"
+        break;
+    }
+    console.log(execPath);
+    let shrink = spawn(execPath, ["-dir", input, "-output", output, "-quality", quality, "-workers", workers, "-hierarchy"]);
     shrink.stdout.on("data", (output_info) => {
         event.sender.send("output", output_info)
     });
